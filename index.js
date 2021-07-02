@@ -21,6 +21,7 @@ app.use(fileUpload());
 
 const port = 5500;
 
+
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
@@ -181,5 +182,5 @@ client.connect((err) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
-
+// app.listen(process.env.PORT || port)
 // app.listen(process.env.PORT ||port);
