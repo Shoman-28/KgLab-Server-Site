@@ -18,7 +18,7 @@ app.use(cors());
 app.use(express.static('doctors'));
 app.use(fileUpload());
 
-
+// const port = process.env.PORT || 4500;
 const port = 5500;
 
 
@@ -107,80 +107,19 @@ client.connect((err) => {
     })
     
   })
+
   
-//   app.post('/addADoctor', (req, res) => {
-//     const file = req.files.file;
-//     const name = req.body.name;
-//     const email = req.body.email;
-//     const newImg = file.data;
-//     const encImg = newImg.toString('base64');
-
-//     var image = {
-//         contentType: file.mimetype,
-//         size: file.size,
-//         img: Buffer.from(encImg, 'base64')
-//     };
-
-//     doctorCollection.insertOne({ name, email, image })
-//         .then(result => {
-//             res.send(result.insertedCount > 0);
-//         })
-// })
-
-
-  // app.post('/addADoctore', (req, res)=>{
-  //   const file = req.files.file;
-  //   const name = req.body.name;
-  //   const email = req.body.email;
-  //   // const newImg = files.data;
-  //   // const encImg = newImg.toString('base64');
-    
-  //  const filePath = `${__dirname}/doctors/${file.name}`;
-  //   file.mv(filePath, err=>{
-  //     if(err){
-  //       console.log(err)
-  //       return res.status(500).send({msg: 'Failed to upload Image'});
-  //     }
-    
-  //   const newImg = fs.readFileSync();
-  //   const encImg = newImg.toString('base64');
-  //   var image={
-  //     // contentType:file.mimetype,      
-  //     // size:file.size,
-  //     contentType:req.files.file.mimetype,
-  //     size:req.files.file.size,
-  //     img: Buffer.from(encImg, 'base64')
-  //   }
-
-
-  //     doctorCollection.insertOne({ name, email, image })
-  //     .then(result => {
-  //       fs.remove(filePath, error=>{
-  //         if(error){
-  //           console.log(error)
-  //           return res.status(500).send({msg: 'Failed to upload Image'});
-  //         }
-  //         res.send(result.insertedCount > 0);
-  //       })
-          
-  //     })
-  //   })
-
-
-    // doctorCollection.insertOne({ name, email })
-    //         .then(result => {
-    //             res.send(result.insertedCount > 0);
-    //         })
-
-    
-    
-  // })
 
 
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+
+
+// app.listen(port, () => {
+//   console.log("successfully digital server site");
+// });
 // app.listen(process.env.PORT || port)
 // app.listen(process.env.PORT ||port);
+app.listen(port, () => {
+  console.log(`successfully KgLab app at http://localhost:${port}`);
+});
