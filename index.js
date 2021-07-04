@@ -120,5 +120,5 @@ client.connect((err) => {
 // app.listen(process.env.PORT || port)
 // app.listen(process.env.PORT ||port);
 app.listen(port, () => {
-  console.log(`successfully KgLab app at http://localhost:${port}`);
+  console.log(`successfully KgLab app daploy at http://localhost:${port}`);
 });
