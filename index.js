@@ -7,8 +7,7 @@ const fs = require('fs-extra');
 const { MongoClient } = require("mongodb");
 require('dotenv').config();
 
-const uri =
-  "mongodb+srv://doctor:P1RgsEhAGyptNQSx@cluster0.2nz5u.mongodb.net/doctors?retryWrites=true&w=majority";
+const uri =`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.2nz5u.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 
 
 
@@ -18,8 +17,8 @@ app.use(cors());
 app.use(express.static('doctors'));
 app.use(fileUpload());
 
-// const port = process.env.PORT || 4500;
-const port = 5500;
+const port = process.env.PORT || 5500;
+// const port = 5500;
 
 
 app.get("/", (req, res) => {
